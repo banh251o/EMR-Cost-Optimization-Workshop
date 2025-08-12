@@ -1,6 +1,6 @@
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
-baseURL ="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/"
+baseURL =https://banh251o.github.io/EMR-Cost-Optimization-Workshop/""
 
 
 # For search functionality

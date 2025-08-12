@@ -2,88 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/000058-SessionManager/</loc>
+    <loc>https://banh251o.github.io/EMR-Cost-Optimization-Workshop/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/000058-SessionManager/vi/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/vi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/000058-SessionManager/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/"
                 />
   </url><url>
-    <loc>http://localhost:1313/000058-SessionManager/1-spot-instances/</loc>
+    <loc>https://banh251o.github.io/EMR-Cost-Optimization-Workshop/1-spot-instances/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/000058-SessionManager/vi/1-spot-instances/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/vi/1-spot-instances/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/000058-SessionManager/1-spot-instances/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/1-spot-instances/"
                 />
   </url><url>
-    <loc>http://localhost:1313/000058-SessionManager/2-auto-scaling/</loc>
+    <loc>https://banh251o.github.io/EMR-Cost-Optimization-Workshop/2-auto-scaling/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/000058-SessionManager/vi/2-auto-scaling/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/vi/2-auto-scaling/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/000058-SessionManager/2-auto-scaling/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/2-auto-scaling/"
                 />
   </url><url>
-    <loc>http://localhost:1313/000058-SessionManager/3-mornitoring/</loc>
+    <loc>https://banh251o.github.io/EMR-Cost-Optimization-Workshop/3-mornitoring/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/000058-SessionManager/vi/3-mornitoring/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/vi/3-mornitoring/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/000058-SessionManager/3-mornitoring/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/3-mornitoring/"
                 />
   </url><url>
-    <loc>http://localhost:1313/000058-SessionManager/4-workload-scheduling/</loc>
+    <loc>https://banh251o.github.io/EMR-Cost-Optimization-Workshop/4-workload-scheduling/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/000058-SessionManager/vi/4-workload-scheduling/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/vi/4-workload-scheduling/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/000058-SessionManager/4-workload-scheduling/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/4-workload-scheduling/"
                 />
   </url><url>
-    <loc>http://localhost:1313/000058-SessionManager/categories/</loc>
+    <loc>https://banh251o.github.io/EMR-Cost-Optimization-Workshop/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/000058-SessionManager/vi/categories/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/vi/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/000058-SessionManager/categories/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/000058-SessionManager/tags/</loc>
+    <loc>https://banh251o.github.io/EMR-Cost-Optimization-Workshop/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/000058-SessionManager/vi/tags/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/vi/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/000058-SessionManager/tags/"
+                href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/tags/"
                 />
   </url>
 </urlset>
