@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+<footer class=" footline" >
+    {{with .Params.LastModifierDisplayName}}
+        <i class='fas fa-user'></i> <a href="mailto:{{ $.Params.LastModifierEmail }}">{{ . }}</a>
+        {{ with $.Params.LastModified }}
+            <i class='fas fa-calendar'></i> {{ time.Format "02/01/2006" . }}
+        {{ end }}
+    {{end}}
+</footer>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/000058-SessionManager/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=000058-SessionManager/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.2">
+    <meta name="description" content="">
+<meta name="author" content="baoanh25100@gmail.com">
+
+    <link rel="icon" href="/000058-SessionManager/images/favicon.png" type="image/png">
+
+    <title>Workshop Tối ưu hóa Chi phí EMR :: AWS System Manager</title>
+
+    
+    <link href="/000058-SessionManager/css/nucleus.css?1755036724" rel="stylesheet">
+    <link href="/000058-SessionManager/css/fontawesome-all.min.css?1755036724" rel="stylesheet">
+    <link href="/000058-SessionManager/css/hybrid.css?1755036724" rel="stylesheet">
+    <link href="/000058-SessionManager/css/featherlight.min.css?1755036724" rel="stylesheet">
+    <link href="/000058-SessionManager/css/perfect-scrollbar.min.css?1755036724" rel="stylesheet">
+    <link href="/000058-SessionManager/css/auto-complete.css?1755036724" rel="stylesheet">
+    <link href="/000058-SessionManager/css/atom-one-dark-reasonable.css?1755036724" rel="stylesheet">
+    <link href="/000058-SessionManager/css/theme.css?1755036724" rel="stylesheet">
+    <link href="/000058-SessionManager/css/hugo-theme.css?1755036724" rel="stylesheet">
+    
+    <link href="/000058-SessionManager/css/theme-workshop.css?1755036724" rel="stylesheet">
+    
+    
+
+    <script src="/000058-SessionManager/js/jquery-3.3.1.min.js?1755036724"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/000058-SessionManager/vi/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/000058-SessionManager/js/lunr.min.js?1755036724"></script>
+<script type="text/javascript" src="/000058-SessionManager/js/auto-complete.js?1755036724"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost:1313\/000058-SessionManager\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/000058-SessionManager/js/search.js?1755036724"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/000058-SessionManager/vi/1-spot-instances/" title="Phần 1: Spot Instances" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/000058-SessionManager/vi/1-spot-instances/">
+          Phần 1: Spot Instances
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/000058-SessionManager/vi/2-auto-scaling/" title="Phần 2: Auto Scaling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/000058-SessionManager/vi/2-auto-scaling/">
+          Phần 2: Auto Scaling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/000058-SessionManager/vi/3-mornitoring/" title="Phần 3: Giám sát &amp; Cảnh báo" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/000058-SessionManager/vi/3-mornitoring/">
+          Phần 3: Giám sát &amp; Cảnh báo
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/000058-SessionManager/vi/4-workload-scheduling/" title="Phần 4: Dọn dẹp tài nguyên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/000058-SessionManager/vi/4-workload-scheduling/">
+          Phần 4: Dọn dẹp tài nguyên
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="http://localhost:1313/000058-SessionManager/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="http://localhost:1313/000058-SessionManager/vi/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Upd </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+
+        
+
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
+</span>
+
+ 
+<h1 id="workshop-tối-ưu-hóa-chi-phí-emr">Workshop Tối ưu hóa Chi phí EMR</h1>
+<h2 id="tiết-kiệm-đến-70-chi-phí-amazon-emr">Tiết kiệm đến 70% chi phí Amazon EMR</h2>
+<p>Chào mừng đến với Workshop tối ưu hóa chi phí Amazon EMR toàn diện! Học các chiến lược đã được chứng minh để giảm đáng kể chi phí EMR trong khi vẫn duy trì hiệu suất và độ tin cậy.</p>
+<h2 id="-mục-tiêu-workshop">🎯 Mục tiêu Workshop</h2>
+<p>Sau khi hoàn thành workshop này, bạn sẽ:</p>
+<ul>
+<li><strong>Giảm chi phí EMR 60-70%</strong> bằng spot instances và auto scaling</li>
+<li><strong>Triển khai giám sát chủ động</strong> với cảnh báo và khắc phục tự động</li>
+<li><strong>Thành thạo các kỹ thuật</strong> tối ưu chi phí production-ready</li>
+<li><strong>Triển khai giám sát và quản trị</strong> cấp doanh nghiệp</li>
+</ul>
+<h2 id="-tiết-kiệm-chi-phí-dự-kiến">💰 Tiết kiệm Chi phí Dự kiến</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Quy mô Công ty</th>
+          <th>Trước</th>
+          <th>Sau</th>
+          <th>Tiết kiệm/Tháng</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Nhỏ</td>
+          <td>$2,000</td>
+          <td>$600</td>
+          <td><strong>$1,400</strong></td>
+      </tr>
+      <tr>
+          <td>Trung bình</td>
+          <td>$10,000</td>
+          <td>$3,000</td>
+          <td><strong>$7,000</strong></td>
+      </tr>
+      <tr>
+          <td>Lớn</td>
+          <td>$40,000</td>
+          <td>$12,000</td>
+          <td><strong>$28,000</strong></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-cấu-trúc-workshop">📚 Cấu trúc Workshop</h2>
+<h3 id="phần-1-spot-instances-tiết-kiệm-39">Phần 1: Spot Instances (Tiết kiệm 39%)</h3>
+<ul>
+<li>Mixed instance groups</li>
+<li>Xử lý interruption</li>
+<li>Best practices</li>
+</ul>
+<h3 id="phần-2-auto-scaling-tiết-kiệm-thêm-40">Phần 2: Auto Scaling (Tiết kiệm thêm 40%)</h3>
+<ul>
+<li>Managed scaling policies</li>
+<li>Custom metrics</li>
+<li>Tối ưu hiệu suất</li>
+</ul>
+<h3 id="phần-3-giám-sát--cảnh-báo-tiết-kiệm-thêm-15">Phần 3: Giám sát &amp; Cảnh báo (Tiết kiệm thêm 15%)</h3>
+<ul>
+<li>Theo dõi chi phí thời gian thực</li>
+<li>Khắc phục tự động</li>
+<li>Dashboard production</li>
+</ul>
+<h3 id="phần-4-dọn-dẹp-tài-nguyên">Phần 4: Dọn dẹp Tài nguyên</h3>
+<ul>
+<li>Quy trình dọn dẹp hoàn chỉnh</li>
+<li>Xác minh chi phí</li>
+<li>Best practices</li>
+</ul>
+<h2 id="-đối-tượng-mục-tiêu">🎓 Đối tượng Mục tiêu</h2>
+<p><strong>Chính:</strong></p>
+<ul>
+<li>Data Engineers (2+ năm kinh nghiệm)</li>
+<li>DevOps Engineers (có kiến thức AWS)</li>
+<li>Solutions Architects (tập trung tối ưu chi phí)</li>
+</ul>
+<p><strong>Phụ:</strong></p>
+<ul>
+<li>Senior Developers (kinh nghiệm big data)</li>
+<li>Cloud Engineers (kinh nghiệm EMR)</li>
+<li>Technical Leads (quản lý chi phí)</li>
+</ul>
+<h2 id="-thời-gian">⏱️ Thời gian</h2>
+<p><strong>Tổng thời gian:</strong> 4-6 giờ</p>
+<ul>
+<li>Phần 1: 1.5 giờ</li>
+<li>Phần 2: 2 giờ</li>
+<li>Phần 3: 2.5 giờ</li>
+<li>Phần 4: 30 phút</li>
+</ul>
+<h2 id="-yêu-cầu-tiên-quyết">📋 Yêu cầu Tiên quyết</h2>
+<h3 id="kiến-thức-bắt-buộc">Kiến thức Bắt buộc</h3>
+<ul>
+<li>✅ AWS cơ bản (EC2, S3, IAM)</li>
+<li>✅ EMR/Spark căn bản</li>
+<li>✅ Kinh nghiệm command line</li>
+<li>✅ Kiến thức Python cơ bản</li>
+</ul>
+<h3 id="quyền-truy-cập-bắt-buộc">Quyền truy cập Bắt buộc</h3>
+<ul>
+<li>✅ AWS account với quyền EMR</li>
+<li>✅ AWS CLI đã cấu hình</li>
+<li>✅ Ngân sách $50-100 cho hands-on labs</li>
+</ul>
+<h3 id="công-cụ-khuyến-nghị">Công cụ Khuyến nghị</h3>
+<ul>
+<li>✅ AWS CLI v2</li>
+<li>✅ Python 3.7+</li>
+<li>✅ Text editor/IDE</li>
+<li>✅ Web browser</li>
+</ul>
+<h2 id="-bắt-đầu">🚀 Bắt đầu</h2>
+<ol>
+<li><strong>Thiết lập Yêu cầu</strong> - Cấu hình môi trường</li>
+<li><strong>Phần 1: Spot Instances</strong> - Triển khai tiết kiệm 39%</li>
+<li><strong>Phần 2: Auto Scaling</strong> - Thêm 40% tiết kiệm</li>
+<li><strong>Phần 3: Giám sát</strong> - Khả năng quan sát hoàn chỉnh</li>
+<li><strong>Phần 4: Dọn dẹp</strong> - Dọn dẹp tài nguyên</li>
+</ol>
+<h2 id="-chỉ-số-thành-công">🏆 Chỉ số Thành công</h2>
+<p>Sau khi hoàn thành workshop:</p>
+<ul>
+<li><strong>Giảm chi phí 70%</strong> đạt được</li>
+<li><strong>99.9% uptime</strong> được duy trì</li>
+<li><strong>80% ít can thiệp thủ công</strong> hơn</li>
+<li><strong>Giám sát production-ready</strong> được triển khai</li>
+</ul>
+<h2 id="-công-nghệ-chính">💡 Công nghệ Chính</h2>
+<ul>
+<li><strong>Amazon EMR</strong> - Managed Hadoop/Spark</li>
+<li><strong>EC2 Spot Instances</strong> - Tiết kiệm đến 90%</li>
+<li><strong>Auto Scaling</strong> - Quản lý capacity động</li>
+<li><strong>CloudWatch</strong> - Giám sát và cảnh báo</li>
+<li><strong>Lambda</strong> - Khắc phục tự động</li>
+<li><strong>SNS</strong> - Thông báo cảnh báo</li>
+</ul>
+<h2 id="-những-gì-bạn-sẽ-xây-dựng">🎉 Những gì bạn sẽ Xây dựng</h2>
+<p>Hệ thống tối ưu hóa chi phí EMR hoàn chỉnh, production-ready bao gồm:</p>
+<ul>
+<li><strong>Quản lý spot instance thông minh</strong></li>
+<li><strong>Chính sách auto scaling động</strong></li>
+<li><strong>Giám sát chi phí thời gian thực</strong></li>
+<li><strong>Khắc phục tự động</strong></li>
+<li><strong>Dashboard điều hành</strong></li>
+</ul>
+<hr>
+
+<div class="notices tip" ><p><strong>Mẹo chuyên nghiệp:</strong> Workshop này tự hoàn vốn chỉ bằng việc ngăn chặn một lần vượt chi phí!</p>
+</div>
+
+<p><strong>Sẵn sàng tiết kiệm hàng nghìn đô la cho chi phí EMR? Hãy bắt đầu!</strong></p>
+	
+  
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+		
+			<a class="nav nav-next" href="/000058-SessionManager/vi/1-spot-instances/" title="Phần 1: Spot Instances" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/000058-SessionManager/js/clipboard.min.js?1755036724"></script>
+    <script src="/000058-SessionManager/js/perfect-scrollbar.min.js?1755036724"></script>
+    <script src="/000058-SessionManager/js/perfect-scrollbar.jquery.min.js?1755036724"></script>
+    <script src="/000058-SessionManager/js/jquery.sticky.js?1755036724"></script>
+    <script src="/000058-SessionManager/js/featherlight.min.js?1755036724"></script>
+    <script src="/000058-SessionManager/js/highlight.pack.js?1755036724"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/000058-SessionManager/js/modernizr.custom-3.6.0.js?1755036724"></script>
+    <script src="/000058-SessionManager/js/learn.js?1755036724"></script>
+    <script src="/000058-SessionManager/js/hugo-learn.js?1755036724"></script>
+
+    <link href="/000058-SessionManager/mermaid/mermaid.css?1755036724" rel="stylesheet" />
+    <script src="/000058-SessionManager/mermaid/mermaid.js?1755036724"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new ();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+
