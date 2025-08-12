@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>EMR Cost Optimization Workshop on AWS System Manager</title>
-    <link>http://localhost:1313/000058-SessionManager/</link>
+    <link>https://banh251o.github.io/EMR-Cost-Optimization-Workshop/</link>
     <description>Recent content in EMR Cost Optimization Workshop on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/000058-SessionManager/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://banh251o.github.io/EMR-Cost-Optimization-Workshop/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
