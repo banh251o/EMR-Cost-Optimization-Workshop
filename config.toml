@@ -1,23 +1,28 @@
-# Change the default theme to be use when building the site with Hugo
+# Theme dùng cho site
 theme = "hugo-theme-learn"
-baseURL =https://banh251o.github.io/EMR-Cost-Optimization-Workshop/""
 
+# BaseURL: để "/" cho Netlify, khi build GitHub Pages sẽ set qua lệnh build
+baseURL = "/"
 
-# For search functionality
+# Dùng URL tương đối để tránh lỗi CSS/JS khi đổi domain
+relativeURLs = true
+canonifyURLs = true
+
+# Output formats
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
 [params]
-  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  # Màu theme (red, blue, green, workshop...)
   themeVariant = "workshop"
-  # Git hub repo link
+  # GitHub repo link
   editURL = ""
   description = ""
   author = "baoanh25100@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-  
+
 [Languages]
 [Languages.en]
 title = "AWS System Manager"
@@ -40,4 +45,3 @@ name = "<i class='fab fa-facebook'></i> AWS Study Group"
 identifier = "AWS Study Group FB"
 url = "https://www.facebook.com/groups/awsstudygroupfcj/"
 weight = 20
-
